@@ -1,0 +1,22 @@
+{
+  "name": "automationpracticecom",
+  "version": "1.0.0",
+  "description": "### The cypress end-to-end tests for the automationpractice.com.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/West0ne/automationpracticecom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/West0ne/automationpracticecom/issues"
+  },
+  "homepage": "https://github.com/West0ne/automationpracticecom#readme",
+  "devDependencies": {
+    "cypress": "^8.6.0"
+  }
+}
