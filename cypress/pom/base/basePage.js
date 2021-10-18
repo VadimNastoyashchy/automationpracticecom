@@ -11,7 +11,7 @@ export class BasePage {
 
     visit() {
         cy.visit(this.PAGE_URL);
-
+        
         return this
     }
 
