@@ -18,7 +18,5 @@
   "homepage": "https://github.com/VadimNastoyashchy/automationpracticecom#readme",
   "devDependencies": {
     "cypress": "^8.6.0"
-  },
-  "viewportHeight": 1080,
-  "viewportWidth": 1920
+  }
 }
