@@ -5,7 +5,7 @@ export class BasePage {
 
     constructor(container, page_name, page_url){
         this.CONTAINER = container;
-        this.page_name = page_name;
+        this.PAGE_NAME = page_name;
         this.PAGE_URL = page_url;
     }
 
