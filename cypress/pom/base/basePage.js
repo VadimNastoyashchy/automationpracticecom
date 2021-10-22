@@ -9,6 +9,10 @@ export class BasePage {
         this.PAGE_URL = page_url;
     }
 
+    get container() {
+      return cy.get(this.CONTAINER, {timeout: 60000});
+    }
+
     visit() {
         cy.visit(this.PAGE_URL);
         
@@ -20,5 +24,13 @@ export class BasePage {
 
         return this
     }
+
+    checkContainer(){
+      this.container
+      .should('exist')
+      .should('be.visible');
+
+      return this;
+      }
 
 }

@@ -1,14 +1,7 @@
 import { BasePage } from "./base/basePage";
 
-export class PageHeader extends BasePage {
+export class Header extends BasePage {
   constructor() {
     super('#header')
-  }
-
-  checkHeaderVisible() {
-    cy
-    .get('body')
-    .find(this.CONTAINER)
-    .should('be.visible');
   }
 }

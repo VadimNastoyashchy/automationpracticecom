@@ -1,10 +1,10 @@
 import { HomePage } from "../pom/homePage";
-import { PageHeader } from "../pom/header";
-import { PageFooter } from "../pom/footer";
+import { Header } from "../pom/header";
+import { Footer } from "../pom/footer";
 
 const homePage = new HomePage();
-const pageHeader = new PageHeader();
-const pageFooter = new PageFooter();
+const header = new Header();
+const footer = new Footer();
 
 describe('Home page tests', () => {
   it('Smoke - Home page (UI, body, header, footer', () => {
@@ -12,19 +12,10 @@ describe('Home page tests', () => {
       .visit()
       .checkPageUrl();
 
-    pageHeader.checkHeaderVisible();
-    pageFooter.checkFooterVisible();
+    header
+      .checkContainer();
+
+    footer
+      .checkContainer();
   });
 });
-
-
-/*
-    cy.visit('/index.php');
-    cy.url().should('eq', 'http://automationpractice.com/index.php');
-    cy.get('body')
-      .find('header')
-      .should('be.visible');
-    cy.get('body')
-      .find('footer')
-      .should('be.visible');
-*/
