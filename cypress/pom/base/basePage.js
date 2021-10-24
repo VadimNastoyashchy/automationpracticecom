@@ -32,5 +32,5 @@ export class BasePage {
 
       return this;
       }
-
+    
 }

@@ -4,4 +4,8 @@ export class Header extends BasePage {
   constructor() {
     super('#header')
   }
+
+  openCountactUs() {
+    cy.get('#contact-link').click();
+  }
 }
