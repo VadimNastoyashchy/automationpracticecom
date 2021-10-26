@@ -5,7 +5,11 @@ export class Header extends BasePage {
     super('#header')
   }
 
-  openCountactUs() {
-    cy.get('#contact-link').click();
+  get contactUsLink() {
+    return this.container.find('#contact-link', {timeout: 10000});
+  }
+
+  clickOnContactUsLink() {
+    this.contactUsLink.click();
   }
 }

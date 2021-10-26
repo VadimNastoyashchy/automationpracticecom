@@ -1,12 +1,14 @@
 import { HomePage } from "../pom/homePage";
 import { Header } from "../pom/header";
-import { ContactUs } from "../pom/contactUs"
+import { ContactUs } from "../pom/contactUs";
+import { Footer } from "../pom/footer";
 
 const homePage = new HomePage();
 const header = new Header();
 const contactUs = new ContactUs();
+const footer = new Footer();
 
-describe('Contact Us button check', () => {
+describe('Contact Us tests', () => {
   it('Smoke - Contact Us page (UI, body, header, footer)', () => {
 
     homePage
@@ -14,13 +16,17 @@ describe('Contact Us button check', () => {
       .checkPageUrl()
       .checkContainer();
     
-    header.openCountactUs();
+    header
+      .clickOnContactUsLink();
 
     contactUs
-      .visit()
       .checkPageUrl()
-      .checkContainer()
-      .checkHeader()
-      .checkFooter();
+      .checkContainer();
+
+    header
+      .checkContainer();
+
+    footer
+      .checkContainer();
   });
 });
