@@ -1,11 +1,11 @@
 import { HomePage } from "../pom/homePage";
 import { Header } from "../pom/header";
 import { Footer } from "../pom/footer";
-import { SignIn } from "../pom/signIn";
+import { SignInPage } from "../pom/signIn";
 
 const homePage = new HomePage();
 const header = new Header();
-const signIn = new SignIn();
+const signInPage = new SignInPage();
 const footer = new Footer();
 
 describe('Sign In tests', () => {
@@ -19,7 +19,7 @@ describe('Sign In tests', () => {
     header
       .clickSignInLink();
 
-    signIn
+    signInPage
       .checkPageUrl()
       .checkContainer();
 
