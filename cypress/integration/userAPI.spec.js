@@ -2,7 +2,7 @@ describe('User Ip geolocation service tests', () => {
   it('Smoke - User Ip geolocation service (API)', () => {
     cy.request({
       method: 'GET',
-      url: 'https://freegeoip.app/json/'
+      url: Cypress.env('api_server')
     })
     .should((response) => {
       expect(response.status).to.eq(200)
