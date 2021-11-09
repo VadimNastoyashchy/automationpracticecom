@@ -4,6 +4,9 @@
   "viewportWidth": 1920,
   "baseUrl": "http://automationpractice.com/",
   "env": {
-    "api_server": "https://freegeoip.app/json/"
+    "api_server": "https://freegeoip.app/json/",
+    "allureResultsPath": "someFolder/results",
+    "tmsPrefix": "https://url-to-bug-tracking-system/task-",
+    "issuePrefix": "https://url-to-tms/tests/caseId-"
   }
 }
