@@ -10,6 +10,7 @@ const footer = new Footer();
 
 describe('Contact Us tests', () => {
   it('Smoke - Contact Us page (UI, body, header, footer)', () => {
+    cy.allure().tms('Smoke Contact Us', 'AUT-4');
 
     homePage
       .visit()

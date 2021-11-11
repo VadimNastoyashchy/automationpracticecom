@@ -1,0 +1,73 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "User Ip geolocation service tests",
+    "children" : [ {
+      "name" : "Smoke - User Ip geolocation service (API)",
+      "uid" : "658311d998abf5ba",
+      "parentUid" : "35570d36a87c15c30e9c64f1fe0d1cf4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1636662413762,
+        "stop" : 1636662414364,
+        "duration" : 602
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "35570d36a87c15c30e9c64f1fe0d1cf4"
+  }, {
+    "name" : "Contact Us tests",
+    "children" : [ {
+      "name" : "Smoke - Contact Us page (UI, body, header, footer)",
+      "uid" : "e5d1d847a8a3f3cb",
+      "parentUid" : "d873712dd2fdbf5f184ca05f9fd32323",
+      "status" : "passed",
+      "time" : {
+        "start" : 1636662417104,
+        "stop" : 1636662426233,
+        "duration" : 9129
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "d873712dd2fdbf5f184ca05f9fd32323"
+  }, {
+    "name" : "Home page tests",
+    "children" : [ {
+      "name" : "Smoke - Home page (UI, body, header, footer",
+      "uid" : "65fa45a459a0137b",
+      "parentUid" : "cc49ca2b33363b988d150c0cd264ac96",
+      "status" : "passed",
+      "time" : {
+        "start" : 1636662428711,
+        "stop" : 1636662433020,
+        "duration" : 4309
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "cc49ca2b33363b988d150c0cd264ac96"
+  }, {
+    "name" : "Sign In tests",
+    "children" : [ {
+      "name" : "Smoke - Sign In page (UI, body, header, footer)",
+      "uid" : "7671d7d2877a55e3",
+      "parentUid" : "676cb46cadb1f8ae79f13a64e4afccea",
+      "status" : "passed",
+      "time" : {
+        "start" : 1636662435468,
+        "stop" : 1636662443063,
+        "duration" : 7595
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "676cb46cadb1f8ae79f13a64e4afccea"
+  } ]
+}

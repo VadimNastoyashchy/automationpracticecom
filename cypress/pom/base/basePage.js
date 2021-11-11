@@ -14,21 +14,27 @@ export class BasePage {
     }
 
     visit() {
+        cy.allure().startStep(`Naviage and visit the page ${this.PAGE_URL}`)
         cy.visit(this.PAGE_URL);
+        cy.allure().endStep();
         
         return this
     }
 
     checkPageUrl() {
+        cy.allure().startStep(`Check page url - ${this.PAGE_URL}`)
         cy.location('href', {timeout: 60000}).should('include', this.PAGE_URL);
+        cy.allure().endStep();
 
         return this
     }
 
     checkContainer(){
+      cy.allure().startStep(`Check page container`)
       this.container
       .should('exist')
       .should('be.visible');
+      cy.allure().endStep();
 
       return this;
       }
