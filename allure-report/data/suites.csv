@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Thu Nov 11 22:26:53 EET 2021","Thu Nov 11 22:26:54 EET 2021","602","","User Ip geolocation service tests","","","","Smoke - User Ip geolocation service (API)",""
-"passed","Thu Nov 11 22:27:15 EET 2021","Thu Nov 11 22:27:23 EET 2021","7595","","Sign In tests","","","","Smoke - Sign In page (UI, body, header, footer)",""
-"passed","Thu Nov 11 22:26:57 EET 2021","Thu Nov 11 22:27:06 EET 2021","9129","","Contact Us tests","","","","Smoke - Contact Us page (UI, body, header, footer)",""
-"passed","Thu Nov 11 22:27:08 EET 2021","Thu Nov 11 22:27:13 EET 2021","4309","","Home page tests","","","","Smoke - Home page (UI, body, header, footer",""

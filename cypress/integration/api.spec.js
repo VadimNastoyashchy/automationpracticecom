@@ -19,10 +19,8 @@ metro_code:	0
 describe('User Ip geolocation service tests', () => {
   it('Smoke - User Ip geolocation service (API)', () => {
     cy.allure().tms('Smoke API', 'AUT-12');
-    cy.allure().startStep(`Check geoService`)
     geoService
-    .checkGeoService(obj, 200)
-    cy.allure().endStep();
+    .checkGeoService(obj, 200);
   });
 });
 

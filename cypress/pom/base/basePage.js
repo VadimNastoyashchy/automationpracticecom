@@ -30,7 +30,7 @@ export class BasePage {
     }
 
     checkContainer(){
-      cy.allure().startStep(`Check page container`)
+      cy.allure().startStep(`Check page container ${this.PAGE_NAME}, to exist and to be visible`)
       this.container
       .should('exist')
       .should('be.visible');
