@@ -8,6 +8,7 @@ const footer = new Footer();
 
 describe('Home page tests', () => {
   it('Smoke - Home page (UI, body, header, footer', () => {
+    cy.allure().tms('Smoke Home Page', 'AUT-3');
     homePage
       .visit()
       .checkPageUrl();

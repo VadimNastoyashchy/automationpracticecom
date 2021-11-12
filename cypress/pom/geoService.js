@@ -1,6 +1,7 @@
 export class GeoService {
 
   checkGeoService(obj, statusCode) {
+    cy.allure().startStep(`Check geoService`)
     cy.request({
       method: 'GET',
       url: Cypress.env('api_server')
@@ -11,6 +12,8 @@ export class GeoService {
         expect(value).to.eq(response.body[key]);
         });
   });
+  cy.allure().endStep();
+
     return this;
   }
 }

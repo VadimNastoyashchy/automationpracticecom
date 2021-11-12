@@ -9,8 +9,8 @@ const signInPage = new SignInPage();
 const footer = new Footer();
 
 describe('Sign In tests', () => {
-  it('Smoke - Sign Is page (UI, body, header, footer)', () => {
-
+  it('Smoke - Sign In page (UI, body, header, footer)', () => {
+    cy.allure().tms('Smoke Sign in', 'AUT-5');
     homePage
       .visit()
       .checkPageUrl()
