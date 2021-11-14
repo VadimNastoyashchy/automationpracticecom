@@ -8,9 +8,9 @@ export class GeoService {
     })
     .then((response) => {
       expect(response.status).to.eq(statusCode)
-      Object.entries(obj).forEach(([key, value]) => {
-        expect(response.body).to.include(key);
-        });
+      //Object.entries(obj).forEach(([key, value]) => {
+        //expect(value).to.eq(response.body[key]);
+        //});
   });
   cy.allure().endStep();
 
