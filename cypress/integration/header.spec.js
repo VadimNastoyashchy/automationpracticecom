@@ -13,28 +13,13 @@ describe('Home page header tests', () => {
 
     header
     .checkContainer()
-    .checkBanner()
-
-    header
+    .checkSaleBanner()
     .clickOnContactUsLink()
-
-    header
     .clickSignInLink()
-
-    header
     .checkPhone()
-
-    header
     .checkHeaderLogo()
-
-    header
     .checkSearchField()
-
-    header
     .checkCart()
-
-    header
     .checkMenu()
-
   });
 });

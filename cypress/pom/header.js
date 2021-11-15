@@ -13,7 +13,7 @@ export class Header extends BasePage {
     return this.container.find('.header_user_info', {timeout: 10000})
   }
 
-  get banner() {
+  get saleBanner() {
     return this.container.find('.banner', {timeout: 10000});
   }
 
@@ -29,6 +29,10 @@ export class Header extends BasePage {
     return this.container.find('#searchbox', {timeout: 10000})
   }
 
+  get searchButton() {
+    return this.searchField.find('#search_query_top', {timeout: 10000});
+    }
+
   get cartElement() {
     return this.container.find('.shopping_cart', {timeout: 10000})
   }
@@ -38,57 +42,85 @@ export class Header extends BasePage {
   }
 
   clickOnContactUsLink() {
-    cy.allure().startStep(`Check header Contact Us Link`)
+    cy.allure().startStep(`Check header Contact Us Link for open on current tab`)
     this.contactUsLink.not('[target="_blank"]').click()
     cy.allure().endStep();
+
+    return this
   }
 
   clickSignInLink() {
-    cy.allure().startStep(`Check header SignIn Link`)
+    cy.allure().startStep(`Check header SignIn Link for open on current tab`)
     this.signInLink.not('[target="_blank"]').click()
     cy.allure().endStep();
+
+    return this
   }
 
-  checkBanner() {
-    cy.allure().startStep(`Check header Banner`)
-    this.banner.should('exist').should('be.visible');
+  checkSaleBanner() {
+    cy.allure().startStep(`Check header Sale Banner for visibility`)
+    this.saleBanner
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
+
+    return this
   }
 
   checkPhone() {
-    cy.allure().startStep(`Check header phone link`)
+    cy.allure().startStep(`Check header phone link to contain 'Call us now:' and '0123-456-789'`)
     this.phoneLink.should('exist').should('be.visible').contains('Call us now:').contains('0123-456-789');
     cy.allure().endStep();
+
+    return this
   }
 
   checkHeaderLogo() {
-    cy.allure().startStep(`Check header Logo`)
-    this.headerLogo.should('exist').should('be.visible');
+    cy.allure().startStep(`Check header Logo visibility`)
+    this.headerLogo
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
+
+    return this
   }
 
   checkSearchField() {
-    cy.allure().startStep(`Check header SearchField`)
+    cy.allure().startStep(`Check header SearchField for placeholder text and Search button`)
     this.searchField
     .should('exist')
     .should('be.visible')
-    .get('#search_query_top').invoke('attr', 'placeholder').should('contain', 'Search')
-    .get('#searchbox').find('.btn').click()
+    this.searchButton
+    .invoke('attr', 'placeholder')
+    .should('contain', 'Search')
+    this.searchField
+    .find('.btn')
+    .click()
     cy.allure().endStep();
+
+    return this
   }
 
   checkCart() {
-    cy.allure().startStep(`Check header Cart`)
-    this.cartElement.should('exist').should('be.visible');
+    cy.allure().startStep(`Check header Cart for visibility`)
+    this.cartElement
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
+
+    return this
   }
 
   checkMenu() {
-    cy.allure().startStep(`Check header Menu`)
-    this.menuSection.should('exist').should('be.visible')
+    cy.allure().startStep(`Check header Menu to contain: Women, Dresses, T-shirts`)
+    this.menuSection
+    .should('exist')
+    .should('be.visible')
     .should('contain', 'Women')
     .should('contain', 'Dresses')
     .should('contain', 'T-shirts')
     cy.allure().endStep();
+
+    return this
   }
 }
