@@ -30,8 +30,12 @@ export class Header extends BasePage {
   }
 
   get searchButton() {
-    return this.searchField.find('#search_query_top', {timeout: 10000});
+    return this.searchField.find('button[name="submit_search"]', {timeout: 10000});
     }
+
+  get searchInputField () {
+    return this.searchField.find('#search_query_top', {timeout: 10000});
+  }
 
   get cartElement() {
     return this.container.find('.shopping_cart', {timeout: 10000})
@@ -41,9 +45,13 @@ export class Header extends BasePage {
     return this.container.find('#block_top_menu', {timeout: 10000})
   }
 
+
+
   clickOnContactUsLink() {
     cy.allure().startStep(`Check header Contact Us Link for open on current tab`)
-    this.contactUsLink.not('[target="_blank"]').click()
+    this.contactUsLink.not('[target="_blank"]')
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
 
     return this
@@ -51,7 +59,9 @@ export class Header extends BasePage {
 
   clickSignInLink() {
     cy.allure().startStep(`Check header SignIn Link for open on current tab`)
-    this.signInLink.not('[target="_blank"]').click()
+    this.signInLink.not('[target="_blank"]')
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
 
     return this
@@ -69,7 +79,11 @@ export class Header extends BasePage {
 
   checkPhone() {
     cy.allure().startStep(`Check header phone link to contain 'Call us now:' and '0123-456-789'`)
-    this.phoneLink.should('exist').should('be.visible').contains('Call us now:').contains('0123-456-789');
+    this.phoneLink
+    .should('exist')
+    .should('be.visible')
+    .contains('Call us now:')
+    .contains('0123-456-789');
     cy.allure().endStep();
 
     return this
@@ -90,12 +104,14 @@ export class Header extends BasePage {
     this.searchField
     .should('exist')
     .should('be.visible')
-    this.searchButton
+    this.searchInputField
+    .should('exist')
+    .should('be.visible')
     .invoke('attr', 'placeholder')
     .should('contain', 'Search')
-    this.searchField
-    .find('.btn')
-    .click()
+    this.searchButton
+    .should('exist')
+    .should('be.visible');
     cy.allure().endStep();
 
     return this
