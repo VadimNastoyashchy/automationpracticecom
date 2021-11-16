@@ -45,9 +45,15 @@ export class Header extends BasePage {
     return this.container.find('#block_top_menu', { timeout: 10000 })
   }
 
-
-
   clickOnContactUsLink() {
+    cy.allure().startStep(`Click header Contact Us Link for open on current tab`)
+    this.contactUsLink.click();
+    cy.allure().endStep();
+
+    return this
+  }
+
+  checkOnContactUsLink() {
     cy.allure().startStep(`Check header Contact Us Link for open on current tab`)
     this.contactUsLink.not('[target="_blank"]')
       .should('exist')
@@ -58,6 +64,14 @@ export class Header extends BasePage {
   }
 
   clickSignInLink() {
+    cy.allure().startStep(`Click header SignIn Link for open on current tab`)
+    this.signInLink.click()
+    cy.allure().endStep();
+
+    return this
+  }
+
+  checkSignInLink() {
     cy.allure().startStep(`Check header SignIn Link for open on current tab`)
     this.signInLink.not('[target="_blank"]')
       .should('exist')
