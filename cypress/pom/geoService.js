@@ -6,13 +6,13 @@ export class GeoService {
       method: 'GET',
       url: Cypress.env('api_server')
     })
-    .then((response) => {
-      expect(response.status).to.eq(statusCode)
-      for(let key in response.body){
-        expect(Object.keys(obj)).to.include(key);
-      }
-  });
-  cy.allure().endStep();
+      .then((response) => {
+        expect(response.status).to.eq(statusCode)
+        for (let key in response.body) {
+          expect(Object.keys(obj)).to.include(key);
+        }
+      });
+    cy.allure().endStep();
 
     return this;
   }

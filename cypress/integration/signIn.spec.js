@@ -15,7 +15,7 @@ describe('Sign In tests', () => {
       .visit()
       .checkPageUrl()
       .checkContainer();
-    
+
     header
       .clickSignInLink();
 

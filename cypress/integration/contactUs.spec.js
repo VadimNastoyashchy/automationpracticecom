@@ -16,7 +16,7 @@ describe('Contact Us tests', () => {
       .visit()
       .checkPageUrl()
       .checkContainer();
-    
+
     header
       .clickOnContactUsLink();
 

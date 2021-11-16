@@ -1,41 +1,41 @@
 export class BasePage {
-    CONTAINER;
-    PAGE_NAME;
-    PAGE_URL;
+  CONTAINER;
+  PAGE_NAME;
+  PAGE_URL;
 
-    constructor(container, page_name, page_url){
-        this.CONTAINER = container;
-        this.PAGE_NAME = page_name;
-        this.PAGE_URL = page_url;
-    }
+  constructor(container, page_name, page_url) {
+    this.CONTAINER = container;
+    this.PAGE_NAME = page_name;
+    this.PAGE_URL = page_url;
+  }
 
-    get container() {
-      return cy.get(this.CONTAINER, {timeout: 60000});
-    }
+  get container() {
+    return cy.get(this.CONTAINER, { timeout: 60000 });
+  }
 
-    visit() {
-        cy.allure().startStep(`Naviage and visit the page ${this.PAGE_URL}`)
-        cy.visit(this.PAGE_URL);
-        cy.allure().endStep();
-        
-        return this
-    }
+  visit() {
+    cy.allure().startStep(`Naviage and visit the page ${this.PAGE_URL}`)
+    cy.visit(this.PAGE_URL);
+    cy.allure().endStep();
 
-    checkPageUrl() {
-        cy.allure().startStep(`Check page url - ${this.PAGE_URL}`)
-        cy.location('href', {timeout: 60000}).should('include', this.PAGE_URL);
-        cy.allure().endStep();
+    return this
+  }
 
-        return this
-    }
+  checkPageUrl() {
+    cy.allure().startStep(`Check page url - ${this.PAGE_URL}`)
+    cy.location('href', { timeout: 60000 }).should('include', this.PAGE_URL);
+    cy.allure().endStep();
 
-    checkContainer(){
-      cy.allure().startStep(`Check page container ${this.PAGE_NAME}, to exist and to be visible`)
-      this.container
+    return this
+  }
+
+  checkContainer() {
+    cy.allure().startStep(`Check page container ${this.PAGE_NAME}, to exist and to be visible`)
+    this.container
       .should('exist')
       .should('be.visible');
-      cy.allure().endStep();
+    cy.allure().endStep();
 
-      return this;
-      }
+    return this;
+  }
 }
