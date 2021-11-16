@@ -3,16 +3,16 @@ import { GeoService } from "../pom/geoService";
 const geoService = new GeoService();
 
 const obj = {
-ip:	"176.118.52.230",
-country_code:	"UA",
-country_name:	"Ukraine",
-region_code:	"46",
-region_name:	"Lviv Oblast",
-city:	"Turka",
-zip_code:	"82500",
-time_zone:	"Europe/Kiev",
-latitude:	49.1557,
-longitude:	23.027,
+ip:	"",
+country_code:	"",
+country_name:	"",
+region_code:	"",
+region_name:	"",
+city:	"",
+zip_code:	"",
+time_zone:	"",
+latitude:	0,
+longitude:	0,
 metro_code:	0
 }
 
