@@ -8,18 +8,18 @@ describe('Home page header tests', () => {
   it('Smoke - Home page Header tests', () => {
     cy.allure().tms('Smoke - Home page Header', 'AUT-6');
     homePage
-    .visit()
-    .checkPageUrl()
-
+      .visit()
+      .checkPageUrl()
+      
     header
-    .checkContainer()
-    .checkSaleBanner()
-    .clickOnContactUsLink()
-    .clickSignInLink()
-    .checkPhone()
-    .checkHeaderLogo()
-    .checkSearchField()
-    .checkCart()
-    .checkMenu()
+      .checkContainer()
+      .checkSaleBanner()
+      .clickOnContactUsLink()
+      .clickSignInLink()
+      .checkPhone()
+      .checkHeaderLogo()
+      .checkSearchField()
+      .checkCart()
+      .checkMenu()
   });
 });
