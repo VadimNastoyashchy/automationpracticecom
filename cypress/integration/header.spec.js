@@ -14,8 +14,8 @@ describe('Home page header tests', () => {
     header
       .checkContainer()
       .checkSaleBanner()
-      .clickOnContactUsLink()
-      .clickSignInLink()
+      .checkOnContactUsLink()
+      .checkSignInLink()
       .checkPhone()
       .checkHeaderLogo()
       .checkSearchField()
