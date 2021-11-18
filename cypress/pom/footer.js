@@ -6,7 +6,7 @@ export class Footer extends BasePage {
   }
 
   get newsLetterSection() {
-    return this.container.find('#newsletter_block_left', { timeout: 10000 })
+    return this.container.find('#newsletter_block_left', { timeout: 10000 });
   }
 
   get searchInputField() {
@@ -18,31 +18,31 @@ export class Footer extends BasePage {
   }
 
   get followUsSection() {
-    return this.container.find('#social_block', { timeout: 10000 })
+    return this.container.find('#social_block', { timeout: 10000 });
   }
 
   get facebookLink() {
-    return this.followUsSection.find('li.facebook > a', { timaout: 5000 })
+    return this.followUsSection.find('li.facebook > a', { timaout: 5000 });
   }
 
   get twitterLink() {
-    return this.followUsSection.find('li.twitter > a', { timaout: 5000 })
+    return this.followUsSection.find('li.twitter > a', { timaout: 5000 });
   }
 
   get youtubeLink() {
-    return this.followUsSection.find('li.youtube > a', { timaout: 5000 })
+    return this.followUsSection.find('li.youtube > a', { timaout: 5000 });
   }
 
   get plusGoogleLink() {
-    return this.followUsSection.find('li.google-plus > a', { timaout: 5000 })
+    return this.followUsSection.find('li.google-plus > a', { timaout: 5000 });
   }
 
   get categorySection() {
-    return this.container.find('.blockcategories_footer', { timaout: 5000 })
+    return this.container.find('.blockcategories_footer', { timaout: 5000 });
   }
 
   get womenSectionLink() {
-    return this.categorySection.find('a[title*="You will find"]', { timaout: 5000 })
+    return this.categorySection.find('a[title*="You will find"]', { timaout: 5000 });
   }
 
   get informationSection() {
@@ -122,15 +122,15 @@ export class Footer extends BasePage {
   }
 
   get year() {
-    return this.corporateSection.find('div', { timeout: 10000 })
+    return this.corporateSection.find('div', { timeout: 10000 });
   }
 
   get createdBy() {
-    return this.corporateSection.find('div > a', { timeout: 10000 })
+    return this.corporateSection.find('div > a', { timeout: 10000 });
   }
 
   checkNewsLetterSection() {
-    cy.allure().startStep(`Check footer SearchField for placeholder text and Submit button`)
+    cy.allure().startStep(`Check footer SearchField for placeholder text and Submit button`);
     this.newsLetterSection
       .should('exist')
       .should('be.visible')
@@ -147,7 +147,7 @@ export class Footer extends BasePage {
   }
 
   checkFollowUsSection() {
-    cy.allure().startStep(`Check Follow us section for social links`)
+    cy.allure().startStep(`Check Follow us section for social links`);
     this.followUsSection
       .should('exist')
       .should('be.visible')
@@ -169,20 +169,20 @@ export class Footer extends BasePage {
   }
 
   checkCategorySection() {
-    cy.allure().startStep(`Check Categories section for existing links`)
+    cy.allure().startStep(`Check Categories section for existing links`);
     this.categorySection
       .should('exist')
       .should('be.visible')
     this.womenSectionLink
       .should('exist')
       .should('have.attr', 'href', 'http://automationpractice.com/index.php?id_category=3&controller=category')
-      cy.allure().endStep();
+    cy.allure().endStep();
 
     return this;
   }
 
   checkInformationSection() {
-    cy.allure().startStep(`Check Information section for existing links`)
+    cy.allure().startStep(`Check Information section for existing links`);
     this.informationSection
       .should('exist')
       .should('be.visible')
@@ -202,13 +202,13 @@ export class Footer extends BasePage {
       .should('have.attr', 'href', 'http://automationpractice.com/index.php?id_cms=4&controller=cms')
     this.sitemap
       .should('have.attr', 'href', 'http://automationpractice.com/index.php?controller=sitemap')
-      cy.allure().endStep();
+    cy.allure().endStep();
 
     return this;
   }
 
   checkMyAccountSection() {
-    cy.allure().startStep(`Check Account section for “Specials”, “My orders“, “My credit slips“, “My addresses“, “My personal info“ links.`)
+    cy.allure().startStep(`Check Account section for “Specials”, “My orders“, “My credit slips“, “My addresses“, “My personal info“ links.`);
     this.myAccountSection
       .should('exist')
       .should('be.visible')
@@ -220,13 +220,13 @@ export class Footer extends BasePage {
       .should('have.attr', 'href', 'http://automationpractice.com/index.php?controller=addresses')
     this.myPersonalinfo
       .should('have.attr', 'href', 'http://automationpractice.com/index.php?controller=identity')
-      cy.allure().endStep();
+    cy.allure().endStep();
 
     return this;
   }
 
   checkStoreInformationSection() {
-    cy.allure().startStep(`Check Information section for “Addresses”, “Phone number“, “Email“ links`)
+    cy.allure().startStep(`Check Information section for “Addresses”, “Phone number“, “Email“ links`);
     this.storeInformationSection
       .should('exist')
       .should('be.visible')
@@ -236,21 +236,20 @@ export class Footer extends BasePage {
       .should('include.text', '(347) 466-7432')
     this.infoEmail
       .should('include.text', 'support@seleniumframework.com')
-      cy.allure().endStep();
+    cy.allure().endStep();
 
     return this;
   }
 
   checkCorporateSection() {
-    cy.allure().startStep(`Check Corporate section for “Year” and “Created by”`)
+    cy.allure().startStep(`Check Corporate section for “Year” and “Created by”`);
     this.corporateSection
       .should('exist')
       .should('be.visible')
     this.year
-    .should('include.text', '2014')
+      .should('include.text', '2014')
     this.createdBy
-    .should('include.text', 'Ecommerce software by PrestaShop™')
+      .should('include.text', 'Ecommerce software by PrestaShop™')
     cy.allure().endStep();
   }
-
 }
