@@ -1,7 +1,7 @@
 export class GeoService {
 
-  checkGeoService(obj, statusCode) {
-    cy.allure().startStep(`Check geoService`)
+  public checkGeoService(obj: object, statusCode: number): this {
+    cy.allure().startStep(`Check geoService`);
     cy.request({
       method: 'GET',
       url: Cypress.env('api_server')
