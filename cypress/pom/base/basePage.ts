@@ -1,7 +1,7 @@
 export class BasePage {
-  CONTAINER: string;
-  PAGE_NAME: string;
-  PAGE_URL: string;
+  protected CONTAINER: string;
+  protected PAGE_NAME: string;
+  protected PAGE_URL: string;
 
   constructor(container: string, page_name: string, page_url?: string) {
     this.CONTAINER = container;
