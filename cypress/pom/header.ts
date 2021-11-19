@@ -5,47 +5,47 @@ export class Header extends BasePage {
     super('#header', 'Header')
   }
 
-  get contactUsLink() {
+  private get contactUsLink(): Cypress.Chainable {
     return this.container.find('#contact-link', { timeout: 10000 })
   }
 
-  get signInLink() {
+  private get signInLink(): Cypress.Chainable {
     return this.container.find('.header_user_info', { timeout: 10000 })
   }
 
-  get saleBanner() {
+  private get saleBanner(): Cypress.Chainable {
     return this.container.find('.banner', { timeout: 10000 });
   }
 
-  get phoneLink() {
+  private get phoneLink(): Cypress.Chainable {
     return this.container.find('.shop-phone', { timeout: 10000 });
   }
 
-  get headerLogo() {
+  private get headerLogo(): Cypress.Chainable {
     return this.container.find('#header_logo', { timeout: 10000 })
   }
 
-  get searchField() {
+  private get searchField(): Cypress.Chainable {
     return this.container.find('#searchbox', { timeout: 10000 })
   }
 
-  get searchButton() {
+  private get searchButton(): Cypress.Chainable {
     return this.searchField.find('button[name="submit_search"]', { timeout: 10000 });
   }
 
-  get searchInputField() {
+  private get searchInputField(): Cypress.Chainable {
     return this.searchField.find('#search_query_top', { timeout: 10000 });
   }
 
-  get cartElement() {
+  private get cartElement(): Cypress.Chainable {
     return this.container.find('.shopping_cart', { timeout: 10000 })
   }
 
-  get menuSection() {
+  private get menuSection(): Cypress.Chainable {
     return this.container.find('#block_top_menu', { timeout: 10000 })
   }
 
-  clickOnContactUsLink() {
+  public clickOnContactUsLink(): this {
     cy.allure().startStep(`Click header Contact Us Link for open on current tab`)
     this.contactUsLink.click();
     cy.allure().endStep();
@@ -53,7 +53,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkOnContactUsLink() {
+  public checkOnContactUsLink(): this {
     cy.allure().startStep(`Check header Contact Us Link for open on current tab`)
     this.contactUsLink.not('[target="_blank"]')
       .should('exist')
@@ -63,7 +63,7 @@ export class Header extends BasePage {
     return this
   }
 
-  clickSignInLink() {
+  public clickSignInLink(): this {
     cy.allure().startStep(`Click header SignIn Link for open on current tab`)
     this.signInLink.click()
     cy.allure().endStep();
@@ -71,7 +71,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkSignInLink() {
+  public checkSignInLink(): this {
     cy.allure().startStep(`Check header SignIn Link for open on current tab`)
     this.signInLink.not('[target="_blank"]')
       .should('exist')
@@ -81,7 +81,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkSaleBanner() {
+  public checkSaleBanner(): this {
     cy.allure().startStep(`Check header Sale Banner for visibility`)
     this.saleBanner
       .should('exist')
@@ -91,7 +91,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkPhone() {
+  public checkPhone(): this {
     cy.allure().startStep(`Check header phone link to contain 'Call us now:' and '0123-456-789'`)
     this.phoneLink
       .should('exist')
@@ -103,7 +103,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkHeaderLogo() {
+  public checkHeaderLogo(): this {
     cy.allure().startStep(`Check header Logo visibility`)
     this.headerLogo
       .should('exist')
@@ -113,7 +113,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkSearchField() {
+  public checkSearchField(): this {
     cy.allure().startStep(`Check header SearchField for placeholder text and Search button`)
     this.searchField
       .should('exist')
@@ -131,7 +131,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkCart() {
+  public checkCart(): this {
     cy.allure().startStep(`Check header Cart for visibility`)
     this.cartElement
       .should('exist')
@@ -141,7 +141,7 @@ export class Header extends BasePage {
     return this
   }
 
-  checkMenu() {
+  public checkMenu(): void {
     cy.allure().startStep(`Check header Menu to contain: Women, Dresses, T-shirts`)
     this.menuSection
       .should('exist')
@@ -150,7 +150,5 @@ export class Header extends BasePage {
       .should('contain', 'Dresses')
       .should('contain', 'T-shirts')
     cy.allure().endStep();
-
-    return this
   }
 }

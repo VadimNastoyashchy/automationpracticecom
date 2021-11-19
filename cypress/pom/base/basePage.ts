@@ -1,19 +1,19 @@
 export class BasePage {
-  CONTAINER;
-  PAGE_NAME;
-  PAGE_URL;
+  protected CONTAINER: string;
+  protected PAGE_NAME: string;
+  protected PAGE_URL: string;
 
-  constructor(container, page_name, page_url) {
+  constructor(container: string, page_name: string, page_url?: string) {
     this.CONTAINER = container;
     this.PAGE_NAME = page_name;
     this.PAGE_URL = page_url;
   }
 
-  get container() {
+  protected get container(): Cypress.Chainable {
     return cy.get(this.CONTAINER, { timeout: 60000 });
   }
 
-  visit() {
+  public visit(): this {
     cy.allure().startStep(`Naviage and visit the page ${this.PAGE_URL}`)
     cy.visit(this.PAGE_URL);
     cy.allure().endStep();
@@ -21,7 +21,7 @@ export class BasePage {
     return this
   }
 
-  checkPageUrl() {
+  public checkPageUrl(): this {
     cy.allure().startStep(`Check page url - ${this.PAGE_URL}`)
     cy.location('href', { timeout: 60000 }).should('include', this.PAGE_URL);
     cy.allure().endStep();
@@ -29,7 +29,7 @@ export class BasePage {
     return this
   }
 
-  checkContainer() {
+  public checkContainer(): this {
     cy.allure().startStep(`Check page container ${this.PAGE_NAME}, to exist and to be visible`)
     this.container
       .should('exist')

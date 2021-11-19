@@ -5,131 +5,131 @@ export class Footer extends BasePage {
     super('#footer', 'Footer')
   }
 
-  get newsLetterSection() {
+  private get newsLetterSection(): Cypress.Chainable {
     return this.container.find('#newsletter_block_left', { timeout: 10000 });
   }
 
-  get searchInputField() {
+  private get searchInputField(): Cypress.Chainable {
     return this.newsLetterSection.find('#newsletter-input', { timeout: 10000 });
   }
 
-  get submitButton() {
+  private get submitButton(): Cypress.Chainable {
     return this.newsLetterSection.find('button[name="submitNewsletter"]', { timeout: 10000 });
   }
 
-  get followUsSection() {
+  private get followUsSection(): Cypress.Chainable {
     return this.container.find('#social_block', { timeout: 10000 });
   }
 
-  get facebookLink() {
-    return this.followUsSection.find('li.facebook > a', { timaout: 5000 });
+  private get facebookLink(): Cypress.Chainable {
+    return this.followUsSection.find('li.facebook > a', { timeout: 10000 });
   }
 
-  get twitterLink() {
-    return this.followUsSection.find('li.twitter > a', { timaout: 5000 });
+  private get twitterLink(): Cypress.Chainable {
+    return this.followUsSection.find('li.twitter > a', { timeout: 10000 });
   }
 
-  get youtubeLink() {
-    return this.followUsSection.find('li.youtube > a', { timaout: 5000 });
+  private get youtubeLink(): Cypress.Chainable {
+    return this.followUsSection.find('li.youtube > a', { timeout: 10000 });
   }
 
-  get plusGoogleLink() {
-    return this.followUsSection.find('li.google-plus > a', { timaout: 5000 });
+  private get plusGoogleLink(): Cypress.Chainable {
+    return this.followUsSection.find('li.google-plus > a', { timeout: 10000 });
   }
 
-  get categorySection() {
-    return this.container.find('.blockcategories_footer', { timaout: 5000 });
+  private get categorySection(): Cypress.Chainable {
+    return this.container.find('.blockcategories_footer', { timeout: 10000 });
   }
 
-  get womenSectionLink() {
-    return this.categorySection.find('a[title*="You will find"]', { timaout: 5000 });
+  private get womenSectionLink(): Cypress.Chainable {
+    return this.categorySection.find('a[title*="You will find"]', { timeout: 10000 });
   }
 
-  get informationSection() {
+  private get informationSection(): Cypress.Chainable {
     return this.container.find('#block_various_links_footer', { timeout: 10000 });
   }
 
-  get specials() {
+  private get specials(): Cypress.Chainable {
     return this.informationSection.find('a[title="Specials"]', { timeout: 10000 });
   }
 
-  get newProducts() {
+  private get newProducts(): Cypress.Chainable {
     return this.informationSection.find('a[title="New products"]', { timeout: 10000 });
   }
 
-  get bestSellers() {
+  private get bestSellers(): Cypress.Chainable {
     return this.informationSection.find('a[title="Best sellers"]', { timeout: 10000 });
   }
 
-  get ourStores() {
+  private get ourStores(): Cypress.Chainable {
     return this.informationSection.find('a[title="Our stores"]', { timeout: 10000 });
   }
 
-  get contactUs() {
+  private get contactUs(): Cypress.Chainable {
     return this.informationSection.find('a[title="Contact us"]', { timeout: 10000 });
   }
 
-  get termsAndConditions() {
+  private get termsAndConditions(): Cypress.Chainable {
     return this.informationSection.find('a[title="Terms and conditions of use"]', { timeout: 10000 });
   }
 
-  get aboutUs() {
+  private get aboutUs(): Cypress.Chainable {
     return this.informationSection.find('a[title="About us"]', { timeout: 10000 });
   }
 
-  get sitemap() {
+  private get sitemap(): Cypress.Chainable {
     return this.informationSection.find('a[title="Sitemap"]', { timeout: 10000 });
   }
 
-  get myAccountSection() {
+  private get myAccountSection(): Cypress.Chainable {
     return this.container.find('.footer-block', { timeout: 10000 });
   }
 
-  get myOrders() {
+  private get myOrders(): Cypress.Chainable {
     return this.myAccountSection.find('a[title="My orders"]', { timeout: 10000 });
   }
 
-  get myCreditSlips() {
+  private get myCreditSlips(): Cypress.Chainable {
     return this.myAccountSection.find('a[title="My credit slips"]', { timeout: 10000 });
   }
 
-  get myAdresses() {
+  private get myAdresses(): Cypress.Chainable {
     return this.myAccountSection.find('a[title="My addresses"]', { timeout: 10000 });
   }
 
-  get myPersonalinfo() {
+  private get myPersonalinfo(): Cypress.Chainable {
     return this.myAccountSection.find('a[title="Manage my personal information"]', { timeout: 10000 });
   }
 
-  get storeInformationSection() {
+  private get storeInformationSection(): Cypress.Chainable {
     return this.container.find('#block_contact_infos', { timeout: 10000 });
   }
 
-  get infoAddresses() {
+  private get infoAddresses(): Cypress.Chainable {
     return this.storeInformationSection.find('li', { timeout: 3000 }).first();
   }
 
-  get phoneNumber() {
+  private get phoneNumber(): Cypress.Chainable {
     return this.storeInformationSection.find('li > span', { timeout: 10000 });
   }
 
-  get infoEmail() {
+  private get infoEmail(): Cypress.Chainable {
     return this.storeInformationSection.find('li > span > a', { timeout: 10000 });
   }
 
-  get corporateSection() {
+  private get corporateSection(): Cypress.Chainable {
     return this.container.find('.bottom-footer', { timeout: 10000 });
   }
 
-  get year() {
+  private get year(): Cypress.Chainable {
     return this.corporateSection.find('div', { timeout: 10000 });
   }
 
-  get createdBy() {
+  private get createdBy(): Cypress.Chainable {
     return this.corporateSection.find('div > a', { timeout: 10000 });
   }
 
-  checkNewsLetterSection() {
+  public checkNewsLetterSection(): this {
     cy.allure().startStep(`Check footer SearchField for placeholder text and Submit button`);
     this.newsLetterSection
       .should('exist')
@@ -146,7 +146,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkFollowUsSection() {
+  public checkFollowUsSection(): this {
     cy.allure().startStep(`Check Follow us section for social links`);
     this.followUsSection
       .should('exist')
@@ -168,7 +168,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkCategorySection() {
+  public checkCategorySection(): this {
     cy.allure().startStep(`Check Categories section for existing links`);
     this.categorySection
       .should('exist')
@@ -181,7 +181,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkInformationSection() {
+  public checkInformationSection(): this {
     cy.allure().startStep(`Check Information section for existing links`);
     this.informationSection
       .should('exist')
@@ -207,7 +207,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkMyAccountSection() {
+  public checkMyAccountSection(): this {
     cy.allure().startStep(`Check Account section for “Specials”, “My orders“, “My credit slips“, “My addresses“, “My personal info“ links.`);
     this.myAccountSection
       .should('exist')
@@ -225,7 +225,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkStoreInformationSection() {
+  public checkStoreInformationSection(): this {
     cy.allure().startStep(`Check Information section for “Addresses”, “Phone number“, “Email“ links`);
     this.storeInformationSection
       .should('exist')
@@ -241,7 +241,7 @@ export class Footer extends BasePage {
     return this;
   }
 
-  checkCorporateSection() {
+  public checkCorporateSection(): void {
     cy.allure().startStep(`Check Corporate section for “Year” and “Created by”`);
     this.corporateSection
       .should('exist')
