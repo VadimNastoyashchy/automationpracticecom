@@ -28,5 +28,9 @@ describe('Sign In tests', () => {
 
     footer
       .checkContainer();
+
+    signInPage
+      .checkLoginForm();
+
   });
 });
