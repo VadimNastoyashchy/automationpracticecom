@@ -1,4 +1,3 @@
-import { should } from "chai";
 import { BasePage } from "./base/basePage"
 
 export class SignInPage extends BasePage {
@@ -7,7 +6,7 @@ export class SignInPage extends BasePage {
   }
 
   private get loginForm(): Cypress.Chainable {
-    return this.container.find('#login_form', { timeout: 10000 })
+    return this.container.find('#login_form', { timeout: 10000 });
   }
 
   private get emailField(): Cypress.Chainable {
@@ -19,15 +18,15 @@ export class SignInPage extends BasePage {
   }
 
   private get forgotPassword(): Cypress.Chainable {
-    return this.loginForm.find('p.lost_password > a');
+    return this.loginForm.find('p.lost_password > a', { timeout: 10000 });
   }
 
   private get signInButton(): Cypress.Chainable {
-    return this.loginForm.find('button[name = "SubmitLogin"]')
+    return this.loginForm.find('button[name = "SubmitLogin"]', { timeout: 10000 });
   }
 
   public checkLoginForm(): this {
-    cy.allure().startStep(`Check login Form for existing and visibility`)
+    cy.allure().startStep(`Check login form, email and password`)
     this.loginForm
       .should('exist')
       .should('be.visible');
@@ -37,7 +36,7 @@ export class SignInPage extends BasePage {
   }
 
   public checkEmailField(): this {
-    cy.allure().startStep(`Check email field`)
+    cy.allure().startStep(`Check email field`);
     this.emailField
       .should('exist')
       .should('be.visible');
@@ -47,7 +46,7 @@ export class SignInPage extends BasePage {
   }
 
   public checkPasswordField(): this {
-    cy.allure().startStep(`Check password field`)
+    cy.allure().startStep(`Check password field`);
     this.passwordField
       .should('exist')
       .should('be.visible');
@@ -56,8 +55,8 @@ export class SignInPage extends BasePage {
     return this;
   }
 
-  public checkForgotPassword(): this {
-    cy.allure().startStep(`Check forgot password field`)
+  public checkForgotPasswordLink(): this {
+    cy.allure().startStep(`Check forgot password field`);
     this.forgotPassword
       .should('exist')
       .should('be.visible')
@@ -68,38 +67,39 @@ export class SignInPage extends BasePage {
   }
 
   public checkSignInButton(): this {
-    cy.allure().startStep(`Check Sign In button`)
+    cy.allure().startStep(`Check Sign In button`);
     this.signInButton
       .should('exist')
-      .should('be.visible')
-      .url().should('eq', 'http://automationpractice.com/index.php?controller=authentication&back=my-account')
+      .should('be.visible');
     cy.allure().endStep();
 
     return this;
   }
 
   public fillLoginField(): this {
-    cy.allure().startStep(`Type data in to Login Field`)
+    cy.allure().startStep(`Type data in to Login Field`);
     this.emailField
-      .type('automationpractice@ukr.net')
+      .clear()
+      .type('automationpractice@ukr.net');
     cy.allure().endStep();
 
     return this;
   }
 
   public fillPasswordField(): this {
-    cy.allure().startStep(`Type data in to password field`)
+    cy.allure().startStep(`Type data in to password field`);
     this.passwordField
-      .type('simple_automation_com_2021')
+      .clear()
+      .type('simple_automation_com_2021');
     cy.allure().endStep();
 
     return this;
   }
 
   public clickSignInButton(): void {
-    cy.allure().startStep(`Click Sign in button`)
+    cy.allure().startStep(`Click Sign in button`);
     this.signInButton
-      .click()
+      .click();
     cy.allure().endStep();
   }
 }

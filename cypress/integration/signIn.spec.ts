@@ -48,14 +48,15 @@ describe('Sign In tests', () => {
       .checkLoginForm()
       .checkEmailField()
       .checkPasswordField()
-      .checkForgotPassword()
+      .checkForgotPasswordLink()
       .checkSignInButton()
       .fillLoginField()
       .fillPasswordField()
-      .clickSignInButton()
+      .clickSignInButton();
+
     accountPage
       .checkContainer()
-      .checkUserInfo()
-      .checkBodyText()
+      .checkUserInfo('John Wick')
+      .checkBodyText();
   });
 });
