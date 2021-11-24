@@ -14,7 +14,7 @@ export class AccountPage extends BasePage {
     return this.container.find('#center_column', { timeout: 10000 });
   }
 
-  public checkUserInfo(loginName): this {
+  public checkUserInfo(loginName: string): this {
     cy.allure().startStep(`Check user Info in header`);
     this.userInfo
       .contains(loginName);
