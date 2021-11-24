@@ -1,4 +1,3 @@
-import { should } from "chai";
 import { BasePage } from "./base/basePage";
 
 export class AccountPage extends BasePage {
@@ -12,6 +11,10 @@ export class AccountPage extends BasePage {
 
   private get bodyText(): Cypress.Chainable {
     return this.container.find('#center_column', { timeout: 10000 });
+  }
+
+  private get womanSection(): Cypress.Chainable {
+    return this.container.find('li > a[title="Women"]', { timeout: 10000 });
   }
 
   public checkUserInfo(loginName: string): this {
@@ -30,5 +33,12 @@ export class AccountPage extends BasePage {
     cy.allure().endStep();
 
     return this;
+  }
+
+  public clickWomanSection(): void {
+    cy.allure().startStep(`Click to the Women section button`);
+    this.womanSection
+      .click();
+    cy.allure().endStep();
   }
 }
