@@ -38,12 +38,17 @@ export class WomenPage extends BasePage {
     return this;
   }
 
-  public addProductItem(): this {
+  public addProductItem(): void {
     cy.allure().startStep('Add product item');
     this.productItem
       .click({ force: true });
+    cy.allure().endStep();
+  }
 
+  public checkItemWindowtext(): this {
+    cy.allure().startStep('Check item window text');
     this.itemWindow
+      .should('be.visible')
       .contains('Product successfully added to your shopping cart');
     cy.allure().endStep();
 

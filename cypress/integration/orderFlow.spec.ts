@@ -14,7 +14,7 @@ const shoppingCardSum = new ShoppingCardSum();
 
 describe('User Order flow tests', () => {
   it('Smoke - Order flow (order user scenario)', () => {
-    cy.allure().tms('Smoke Home Page', 'AUT-9');
+    cy.allure().tms('User Order flow tests', 'AUT-9');
     homePage
       .visit()
       .checkPageUrl();
@@ -37,6 +37,9 @@ describe('User Order flow tests', () => {
       .checkContainer()
       .checkPageTitle()
       .addProductItem()
+
+    womenPage
+      .checkItemWindowtext()
       .checkContinueShoppingButton()
       .checkCProceedToCheckoutButton()
       .checkCloseButton()
