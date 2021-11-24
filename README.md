@@ -20,36 +20,16 @@ Add Allure report to project
 brew install allure
 npm i -D @shelex/cypress-allure-plugin
 
-2. Connect plugin in cypress/plugins/index.js
-Add the next code to those file:
-
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
-
-module.exports = (on, config) => {
-    allureWriter(on, config);
-    return config;
-};
-
-3. Register commands in cypress/support/index.js file:
-import '@shelex/cypress-allure-plugin';
-
-4. Configurate cypress.json
-{
-    "env": {
-        "allureResultsPath": "./allure-results",
-        "tmsPrefix": "https://automationpracticecom.atlassian.net/browse/",
-
-    }
-}
-
-5.Create Allure test folder
+2. Run tests with Allure
 npx cypress run --env allure=true
 
-6.Generate Allure report folder
+3.Generate Allure report folder
 allure generate allure-results --clean -o allure-report
 
-7.Open report on browser
+4.Open report on browser
 allure open
+
+
 
 
 
